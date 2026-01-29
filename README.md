@@ -11,3 +11,4 @@ C++ team project that finds total scores and averages and some other stuff
 | double Calc_Average() | double Array of Pointers | Takes the lowest score off, calcs the average (calc is short for calculator btw guys) returns the calc (short for calculator) average | GAGE WILLIAM BOYD |
 | void Write_Array() | double Array of Pointers | Writes all the scores to a file that the user chooses. | LIAM CALVIN DOWELL |
 | double Swap() | double pointer, double pointer2 | Swaps the two pointers | LIAM CALVIN DOWELL |
+| int main() | none | calls get input, sort array, then calc average, and write array to write to a file. ez pz. | GAGE WILLIAM BOYD |
