@@ -23,7 +23,12 @@ int main()
 
 double* Get_Input()
 {
-	return;
+	int size = 0;
+
+	cout << "How many grades would you like to input? : ";
+	cin >> size;
+
+	double* Array_Ptr = new double[size];
 }
 
 void Sort_Array(double* arrPtr[], const int SIZE)
