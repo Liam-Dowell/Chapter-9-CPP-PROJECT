@@ -18,7 +18,10 @@ double swap(double*&, double*&);
 
 int main()
 {
-	return 0;
+	double* Ptr = Get_Input();
+	int Size = sizeof(*Ptr);
+	cout << "Size : " << sizeof(Ptr) << endl;
+	cout << "Size : " << Size << endl;
 }
 
 double* Get_Input()
@@ -29,6 +32,16 @@ double* Get_Input()
 	cin >> size;
 
 	double* Array_Ptr = new double[size];
+
+	for (int count = 0; count < size; count++)
+	{
+		double grade;
+		cout << "Input grade: ";
+		cin >> grade;
+		Array_Ptr[count] = grade;
+	}
+
+	return Array_Ptr;
 }
 
 void Sort_Array(double* arrPtr[], const int SIZE)
