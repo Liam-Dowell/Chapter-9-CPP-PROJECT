@@ -11,13 +11,13 @@
 using namespace std;
 
 double* Get_Input(int SIZE);
-void Sort_Array(double* arrPtr, const int SIZE);
+void Sort_Array(double arrPtr[], const int SIZE);
 double Calc_Average(double* Array_Pointer, const int SIZE);
 void Write_Array(double* arrPtr, const int SIZE);
 double swap(double*&, double*&);
 
 int main()
-{
+{ 
 	// Init
 	int Size = 0;
 	double Average = 0;
@@ -62,9 +62,23 @@ double* Get_Input(int SIZE)
 	return Array_Ptr;
 }
 
-void Sort_Array(double* arrPtr, const int SIZE)
+void Sort_Array(double arrPtr[], const int SIZE)
 {
+	for (int start = 0; start < SIZE - 1; ++start)
+	{
+		int minIndex = start;
+		double minValue = arrPtr[start];
 
+		for (int index = start + 1; index < SIZE; ++index)
+		{
+			if (arrPtr[index] < minValue)
+			{
+				minValue = arrPtr[index];
+				minIndex = index;
+			}
+		}
+		swap(arrPtr[minIndex], arrPtr[start]);
+	}
 }
 
 double Calc_Average(double* Array_Pointer, const int SIZE)
@@ -94,10 +108,21 @@ double Calc_Average(double* Array_Pointer, const int SIZE)
 
 void Write_Array(double* arrPtr, const int SIZE)
 {
+	ofstream inFile;
+	inFile.open("results.txt");
 
+	for (int Count = 0; Count < SIZE; Count++)
+	{
+		inFile << arrPtr[Count] << endl;
+	}
+	
 }
 
 double swap(double*& a, double*& b)
 {
-	return 0.0;
+	double* temp = a;
+	a = b;
+	b = temp;
+
+	return 0;
 }
